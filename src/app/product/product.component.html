@@ -1,0 +1,27 @@
+<h3 *ngIf="products; else noProduct">{{title}}</h3>
+<div class="form-group">
+  <input type="email"
+         class="form-control"
+         id="productName"
+         aria-describedby="emailHelp"
+         placeholder="Enter email">
+  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+</div>
+
+<ng-template #noProduct>
+  <div class="alert alert-primary" role="alert">
+    A simple primary alert—check it out!
+    Bu kategoride urun yoktur
+  </div>
+</ng-template>
+<div class="row">
+  <div *ngFor="let products of products" class="card" style="width: 18rem;">
+    <img class="card-img-top" src="product.imageUrl." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name |uppercase}} {{product.price |currency}}</h5>
+      <p class="card-text">{{product.description}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+
+</div>
